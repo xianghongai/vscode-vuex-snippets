@@ -1,0 +1,65 @@
+{
+	"Vuex Create Getters": {
+		"prefix": "cg",
+		"body": [
+			"export default {",
+			"\t${1:derivedResource}(state) {",
+			"\t\t$2",
+			"\t\treturn $0;",
+			"\t},",
+			"}"
+		],
+		"description": "Vuex Create a getter: handler(state, getters, rootState, rootGetters):\n- `state`: will be module local state if defined in a module.\n- `getters`: module local getters of the current module.\n- `rootState`: global state.\n- `rootGetters`: all getters.\n"
+	},
+	"Vuex Getters property": {
+		"prefix": "gp",
+		"body": ["${1:derivedResource}(state) {", "\t$2", "\treturn $0;", "},"],
+		"description": "Vuex getter property.\n"
+	},
+	"Vuex Getters property (Method-Style)": {
+		"prefix": "gpm",
+		"body": [
+			"${1:derivedResource}: (state) => (payload) => {",
+			"\t$2",
+			"\treturn $0;",
+			"},"
+		]
+	},
+
+	"Vuex store getters (this.$store)": {
+		"prefix": "storeGettersVm",
+		"body": ["this.\\$store.getters.${2:propery}"],
+		"description": "type: `Object`.\nExposes registered getters. Read only.\n"
+	},
+
+	"Vuex store getters": {
+		"prefix": "storeGetters",
+		"body": ["store.getters.${2:propery}"],
+		"description": "type: `Object`.\nExposes registered getters. Read only.\n"
+	},
+
+	"Vuex import mapGetters": {
+		"prefix": "immg",
+		"body": ["import { mapGetters } from 'vuex';"]
+	},
+
+	"Vuex mapGetters": {
+		"prefix": "mg",
+		"body": [
+			"...mapGetters(['${1:some/nested/module/someGetter}', '${2:someGetter}']),"
+		],
+		"description": "The mapGetters helper simply maps store getters to local `computed` properties.\n`mapGetters(namespace?: string, map: Array<string> | Object<string>): Object`\n"
+	},
+	"Vuex mapGetters (namespace)": {
+		"prefix": "mgn",
+		"body": [
+			"...mapGetters('${1:some/nested/module}', ['${2:someGetter}', '${3:someOtherGetter}']),"
+		],
+		"description": "Binding Helpers with Namespace\n.The mapGetters helper simply maps store getters to local `computed` properties.\n`mapGetters(namespace?: string, map: Array<string> | Object<string>): Object`\n"
+	},
+	"Vuex mapGetters (different name)": {
+		"prefix": "mgd",
+		"body": ["...mapGetters({", "\t${1:alias}: '${2:someGetter}',$0", "}),"],
+		"description": "The mapGetters helper simply maps store getters to local `computed` properties.\n`mapGetters(namespace?: string, map: Array<string> | Object<string>): Object`\n"
+	}
+}

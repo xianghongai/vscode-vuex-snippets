@@ -1,0 +1,88 @@
+{
+	"Vuex Create Actions": {
+		"prefix": "ca",
+		"body": [
+			"export default {",
+			"\tasync create${1:Resource}(context, payload) {",
+			"\t\t$2",
+			"\t},",
+			"\tasync remove${1:Resource}(context, payload) {",
+			"\t\t",
+			"\t},",
+			"\tasync update${1:Resource}(context, payload) {",
+			"\t\t",
+			"\t},",
+			"\tasync fetch${1:Resource}(context, payload) {",
+			"\t\t",
+			"\t},",
+			"\tasync fetchAll${1:Resource}(context, payload) {",
+			"\t\t",
+			"\t},",
+			"}"
+		],
+		"description": "Vuex Create an action: handler(context, payload).\nthe `context` object exposes properties:\n- `state`: same as `store.state`, or local state if in modules. \n- `rootState`: same as `store.state`, only in modules. \n- `commit`: same as `store.commit`. \n- `dispatch`: same as `store.dispatch`. \n- `getters`: same as `store.getters`, or local getters if in modules. \n- `rootGetters`: same as `store.getters`, only in modules.\nand also receives a second `payload` argument.\nAction commit mutations, cannot directly change state.\nActions can contain arbitrary asynchronous operations.\nAction can access the state and getters.\nAction can even call (dispatch) other actions.\n"
+	},
+	"Vuex Action property": {
+		"prefix": "ap",
+		"body": ["${1:handler}(context, payload) {", "  $0", "},"],
+		"description": "handler({ state, rootState, commit, dispatch, getters, rootGetters}, payload).\nAction commit mutations, cannot directly change state.\nActions can contain arbitrary asynchronous operations.\nAction can access the state and getters.\nAction can even call (dispatch) other actions.\n"
+	},
+	"Vuex async Action property": {
+		"prefix": "asap",
+		"body": ["async ${1:handler}(context, payload) {", "  $0", "},"],
+		"description": "handler({ state, rootState, commit, dispatch, getters, rootGetters}, payload).\nAction commit mutations, cannot directly change state.\nActions can contain arbitrary asynchronous operations.\nAction can access the state and getters.\nAction can even call (dispatch) other actions.\n"
+	},
+
+	"Vuex import mapActions": {
+		"prefix": "imma",
+		"body": ["import { mapActions } from 'vuex';"]
+	},
+
+	"Vuex Dispatching Action (this.$store)": {
+		"prefix": ["storeDispatch", "davm"],
+		"body": ["this.\\$store.dispatch('${1:someAction}');"]
+	},
+	"Vuex Dispatching Action (this.$store, payload)": {
+		"prefix": ["storeDispatch", "dapvm"],
+		"body": ["this.\\$store.dispatch('${2:someAction}', ${3:payload});"]
+	},
+	"Vuex Dispatching Action": {
+		"prefix": ["storeDispatch", "da"],
+		"body": ["${1:store}.dispatch('${2:someAction}');"]
+	},
+	"Vuex Dispatching Action (payload)": {
+		"prefix": ["storeDispatch", "dap"],
+		"body": ["${1:store}.dispatch('${2:someAction}', ${3:payload});"],
+		"description": "`dispatch(type: string, payload?: any, options?: Object): Promise<any>`;\n`dispatch(action: Object, options?: Object): Promise<any>`;\nDispatch an action. `options` can have `root: true` that allows to dispatch root actions in namespaced modules. Returns a Promise that resolves all triggered action handlers. \n"
+	},
+	"Vuex Dispatching Action (Object-Style)": {
+		"prefix": ["storeDispatch", "dao"],
+		"body": [
+			"${1:store}.dispatch({",
+			"\ttype: '${2:someAction}',",
+			"\t${3:payload},",
+			"});"
+		],
+		"description": "`dispatch(type: string, payload?: any, options?: Object): Promise<any>`;\n`dispatch(action: Object, options?: Object): Promise<any>`;\nDispatch an action. `options` can have `root: true` that allows to dispatch root actions in namespaced modules. Returns a Promise that resolves all triggered action handlers. \n"
+	},
+
+	"Vuex mapActions": {
+		"prefix": "ma",
+		"body": [
+			"...mapActions(['${1:some/nested/module/someAction}', '${2:someAction}']),"
+		],
+		"description": "The `mapActions` helper which maps component `methods` to `this.$store.dispatch()` calls.\n`mapActions(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	},
+	"Vuex mapActions (namespace)": {
+		"prefix": "man",
+		"body": [
+			"...mapActions('${1:some/nested/module}', ['${2:someAction}', '${3:someOtherAction}']),"
+		],
+		"description": "Binding Helpers with Namespace.\n.maps component `methods` to `this.$store.dispatch()` calls.\n`mapActions(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	},
+	"Vuex mapActions (different name)": {
+		"prefix": "mad",
+		"body": ["...mapActions({", "\t${1:handler}: '${2:someAction}',$0", "}),"],
+		"description": "The `mapActions` helper which maps component `methods` to `this.$store.dispatch()` calls.\n`mapActions(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	}
+}

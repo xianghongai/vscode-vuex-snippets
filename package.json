@@ -1,0 +1,79 @@
+{
+  "name": "vscode-vuex-snippets",
+  "publisher": "NicholasHsiang",
+  "displayName": "Vuex Snippets",
+  "description": "Code snippets for Vuex",
+  "icon": "art/icon.png",
+  "version": "1.0.0",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-vuex-snippets/issues"
+  },
+  "homepage": "https://github.com/xianghongai/vscode-vuex-snippets/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-vuex-snippets/blob/master/README.md"
+  },
+  "engines": {
+    "vscode": "^0.12.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "scripts": {
+    "prebuild": "node merge.js",
+    "build": "vsce package",
+    "prepublish": "npm run build",
+    "publish": "vsce publish"
+  },
+  "keywords": [
+    "Snippets",
+    "snippet",
+    "vue",
+    "vuex",
+    "pinia",
+    "vue snippet",
+    "vue snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "vue",
+        "aliases": [
+          "Vue",
+          "vue"
+        ],
+        "extensions": [
+          ".vue"
+        ]
+      },
+      {
+        "id": "vue-html",
+        "aliases": [
+          "Vue-html"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/vuex.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/vuex.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/vuex.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "glob": "^7.1.4"
+  }
+}

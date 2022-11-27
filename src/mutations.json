@@ -1,0 +1,77 @@
+{
+	"Vuex Create Mutations": {
+		"prefix": "cmu",
+		"body": [
+			"export default {",
+			"\t${1:mutation}(state, payload) {",
+			"\t\t$2",
+			"\t},$0",
+			"};",
+			""
+		],
+		"description": "Vuex Create a mutation: handler(state, payload).\n"
+	},
+	"Vuex Mutations property": {
+		"prefix": "mp",
+		"body": ["${1:mutation}(state, payload) {", "\t$2", "},$0"],
+		"description": "Vuex getter property.\n"
+	},
+
+	"Vuex import mapMutations": {
+		"prefix": "immm",
+		"body": ["import { mapMutations } from 'vuex';"]
+	},
+
+	"Vuex Committing Mutation (this.$store)": {
+		"prefix": ["storeCommit", "cmvm"],
+		"body": ["this.\\$store.commit('${1:someMutation}');"]
+	},
+	"Vuex Committing Mutation (this.$store, payload)": {
+		"prefix": ["storeCommit", "cmpvm"],
+		"body": ["this.\\$store.commit('${2:someMutation}', ${3:payload});"]
+	},
+	"Vuex Committing Mutation": {
+		"prefix": ["storeCommit", "cm"],
+		"body": ["${1:store}.commit('${2:someMutation}');"],
+		"description": "`commit(type: string, payload?: any, options?: Object)`;\n`commit(mutation: Object, options?: Object)`;\nCommit a mutation. options can have `root: true` that allows to commit root mutations in namespaced modules. \n"
+	},
+	"Vuex Committing Mutation (payload)": {
+		"prefix": ["storeCommit", "cmp"],
+		"body": ["${1:store}.commit('${2:someMutation}', ${3:payload});"],
+		"description": "`commit(type: string, payload?: any, options?: Object)`;\n`commit(mutation: Object, options?: Object)`;\nCommit a mutation. options can have `root: true` that allows to commit root mutations in namespaced modules. \n"
+	},
+	"Vuex Committing Mutation (Object-Style)": {
+		"prefix": ["storeCommit", "cmo"],
+		"body": [
+			"${1:store}.commit({",
+			"\ttype: '${2:someMutation}',",
+			"\t${3:payload},",
+			"});"
+		],
+		"description": "`commit(type: string, payload?: any, options?: Object)`;\n`commit(mutation: Object, options?: Object)`;\nCommit a mutation. options can have `root: true` that allows to commit root mutations in namespaced modules. \n"
+	},
+
+	"Vuex mapMutations": {
+		"prefix": "mm",
+		"body": [
+			"...mapMutations(['${1:some/nested/module/someMutation}', '${2:someMutation}']),"
+		],
+		"description": "The `mapMutations` helper which maps component `methods` to `this.$store.commit()` calls.\n`mapMutations(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	},
+	"Vuex mapMutations (namespace)": {
+		"prefix": "mmn",
+		"body": [
+			"...mapMutations('${1:some/nested/module}', ['${2:someMutation}', '${3:someOtherMutation}']),"
+		],
+		"description": "Binding Helpers with Namespace.\n.maps component `methods` to `this.$store.commit()` calls.\n`mapMutations(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	},
+	"Vuex mapMutations (different name)": {
+		"prefix": "mmd",
+		"body": [
+			"...mapMutations({",
+			"\t${1:handler}: '${2:someMutation}',$0",
+			"}),"
+		],
+		"description": "The `mapMutations` helper which maps component `methods` to `this.$store.commit()` calls.\n`mapMutations(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	}
+}

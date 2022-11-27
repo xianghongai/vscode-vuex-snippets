@@ -1,0 +1,12 @@
+{
+	"Vuex createNamespacedHelpers": {
+		"prefix": ["cnh", "helper"],
+		"body": [
+			"import { createNamespacedHelpers } from 'vuex';",
+			"",
+			"const { mapState, mapActions } = createNamespacedHelpers('${1:some/nested/module}');",
+			""
+		],
+		"description": "Create namespaced component binding helpers.\nThe returned object contains `mapState`, `mapGetters`, `mapActions` and `mapMutations` that are bound with the given namespace.\n"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"Vuex Composition API Accessing State": {
+		"prefix": "sas",
+		"body": ["const ${2:property} = computed(() => store.state.${1:property});"]
+	},
+	"Vuex Composition API Accessing Getters": {
+		"prefix": "sag",
+		"body": ["const ${2:property} = computed(() => store.getters.${1:property});"]
+	},
+	"Vuex Composition API Accessing Mutations": {
+		"prefix": "sam",
+		"body": ["const ${2:handler} = () => store.commit('${1:mutation}');"]
+	},
+	"Vuex Composition API Accessing Actions": {
+		"prefix": "saa",
+		"body": ["const ${2:handler} = () => store.dispatch('${1:action}');"]
+	}
+}

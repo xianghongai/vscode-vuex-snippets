@@ -1,0 +1,43 @@
+{
+	"Vuex State": {
+		"prefix": "state",
+		"body": ["const state = () => ({", "\t${1:property}: ${2:'value'},", "});"]
+	},
+
+	"Vuex store state (this.$store)": {
+		"prefix": "storeStateVm",
+		"body": ["this.\\$store.state.${2:propery}"],
+		"description": "type: `Object`.\nThe root state. Read only.\n"
+	},
+
+	"Vuex store state": {
+		"prefix": "storeState",
+		"body": ["store.state.${2:propery}"],
+		"description": "type: `Object`.\nThe root state. Read only.\n"
+	},
+
+	"Vuex import mapState": {
+		"prefix": "imms",
+		"body": ["import { mapState } from 'vuex';"]
+	},
+
+	"Vuex mapState": {
+		"prefix": "ms",
+		"body": [
+			"...mapState({",
+			"\t${2:property}: (state) => ${1:state.some.nested.module.property},$3",
+			"}),$0"
+		],
+		"description": "The mapState helper which generates `computed` getter functions.\n`mapState(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	},
+
+	"Vuex mapState (namespace)": {
+		"prefix": "msn",
+		"body": [
+			"...mapState('${1:some/nested/module}', {",
+			"\t${3:property}: (state) => state.${2:property},$4",
+			"}),$0"
+		],
+		"description": "The mapState helper which generates `computed` getter functions.\n`mapState(namespace?: string, map: Array<string> | Object<string | function>): Object`\n"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"Vuex Create Modules": {
+		"prefix": "cm",
+		"body": [
+			"import getters from './getters';",
+			"import actions from './actions';",
+			"import mutations from './mutations';",
+			"",
+			"const state = () => ({",
+			"\t${1:property}: ${2:'value'},",
+			"});",
+			"",
+			"export default {",
+			"\tnamespaced: true,",
+			"\tstate,",
+			"\tgetters,",
+			"\tactions,",
+			"\tmutations,",
+			"};",
+			""
+		],
+		"description": "Vuex Create a module"
+	}
+}

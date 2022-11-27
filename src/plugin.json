@@ -1,0 +1,14 @@
+{
+	"Vuex Create a Plugin": {
+		"prefix": "cp",
+		"body": [
+			"const ${1:feature}Plugin = (store) => {",
+			"\tstore.subscribe((mutation, state) => {",
+			"\t\t$0",
+			"\t});",
+			"};",
+			""
+		],
+		"description": "Vuex Create a Plugin.\nused: `plugins: [featurePlugin]`.\n"
+	}
+}

@@ -1,0 +1,86 @@
+{
+	"Vuex store subscribe": {
+		"prefix": "storeSubscribe",
+		"body": [
+			"const unsubscribe = store.subscribe((mutation, state) => {",
+			"\t${2}",
+			"});"
+		],
+		"description": "`subscribe(handler: Function, options?: Object): Function`.\nSubscribe to store mutations. The `handler` is called after every mutation and receives the mutation descriptor and post-mutation state as arguments.\nBy default, new handler is added to the end of the chain, so it will be executed after other handlers that were added before. This can be overridden by adding `prepend: true` to `options`, which will add the handler to the beginning of the chain.\nThe `subscribe` method will return an `unsubscribe` function, which should be called when the subscription is no longer needed. For example, you might subscribe to a Vuex Module and unsubscribe when you unregister the module. Or you might call `subscribe` from inside a Vue Component and then destroy the component later. In these cases, you should remember to unsubscribe the subscription manually.\n"
+	},
+	"Vuex store subscribeAction": {
+		"prefix": "storeSubscribeAction",
+		"body": [
+			"const unsubscribe = store.subscribeAction((action, state) => {",
+			"\t$2",
+			"});"
+		],
+		"description": "`subscribeAction(handler: Function, options?: Object): Function`.\nSubscribe to store actions. The `handler` is called for every dispatched action and receives the action descriptor and current store state as arguments. The `subscribe` method will return an `unsubscribe` function, which should be called when the subscription is no longer needed. For example, when unregistering a Vuex module or before destroying a Vue component.\nBy default, new handler is added to the end of the chain, so it will be executed after other handlers that were added before. This can be overridden by adding `prepend: true` to `options`, which will add the handler to the beginning of the chain.\nThe `subscribeAction` method will return an `unsubscribe` function, which should be called when the subscription is no longer needed. For example, you might subscribe to a Vuex Module and unsubscribe when you unregister the module. Or you might call `subscribeAction` from inside a Vue Component and then destroy the component later. In these cases, you should remember to unsubscribe the subscription manually.\n"
+	},
+	"Vuex store subscribeAction (Object-Style)": {
+		"prefix": "storeSubscribeAction",
+		"body": [
+			"const unsubscribe = store.subscribeAction({",
+			"\tbefore: (action, state) => {",
+			"\t\t$2",
+			"\t},",
+			"\tafter: (action, state) => {",
+			"\t\t$3",
+			"\t},",
+			"\terror: (action, state, error) => {",
+			"\t\t$4",
+			"\t}",
+			"});"
+		],
+		"description": "`subscribeAction(handler: Function, options?: Object): Function`.\nSubscribe to store actions. The `handler` is called for every dispatched action and receives the action descriptor and current store state as arguments. The `subscribe` method will return an `unsubscribe` function, which should be called when the subscription is no longer needed. For example, when unregistering a Vuex module or before destroying a Vue component.\nBy default, new handler is added to the end of the chain, so it will be executed after other handlers that were added before. This can be overridden by adding `prepend: true` to `options`, which will add the handler to the beginning of the chain.\nThe `subscribeAction` method will return an `unsubscribe` function, which should be called when the subscription is no longer needed. For example, you might subscribe to a Vuex Module and unsubscribe when you unregister the module. Or you might call `subscribeAction` from inside a Vue Component and then destroy the component later. In these cases, you should remember to unsubscribe the subscription manually.\n"
+	},
+	"Vuex store replaceState": {
+		"prefix": "storeReplaceState",
+		"body": ["store.replaceState(${2:otherState});$0"],
+		"description": "`replaceState(state: Object)`.\nReplace the store's root state. Use this only for state hydration / time-travel purposes.\n"
+	},
+	"Vuex store watch": {
+		"prefix": "storeWatch",
+		"body": [
+			"const ${0:unwatch} = store.watch(",
+			"\t(state) => state.${1:property},",
+			"\t(value) => {",
+			"\t\t$2;",
+			"\t},",
+			"\t{",
+			"\t\timmediate: true,",
+			"\t\tdeep: true,",
+			"\t}",
+			");",
+			""
+		],
+		"description": "`watch(fn: Function, callback: Function, options?: Object): Function`.\nReactively watch fn's return value, and call the callback when the value changes. fn receives the store's `state` as the first argument, and `getters` as the second argument. Accepts an optional options object that takes the same options as Vue's `vm.$watch` method.\nTo stop watching, call the returned unwatch function.\n"
+	},
+	"Vuex store registerModule": {
+		"prefix": "storeRegisterModule",
+		"body": [
+			"store.registerModule('${2:moduleName}', {",
+			"\tstate: () => ({}),",
+			"\tmutations: {},",
+			"\tactions: {},",
+			"\tgetters: {},",
+			"});"
+		],
+		"description": "`registerModule(path: string | Array<string>, module: Module, options?: Object)`.\nRegister a dynamic module.\noptions can have `preserveState: true` that allows to preserve the previous state. Useful with Server Side Rendering.\n"
+	},
+	"Vuex store unregisterModule": {
+		"prefix": "storeUnregisterModule",
+		"body": ["store.unregisterModule('${2:moduleName}')"],
+		"description": "`unregisterModule(path: string | Array<string>)`.\nUnregister a dynamic module.\n"
+	},
+	"Vuex store hasModule": {
+		"prefix": "storeHasModule",
+		"body": ["store.hasModule('${2:moduleName}')"],
+		"description": "`hasModule(path: string | Array<string>): boolean`.\nCheck if the module with the given name is already registered.\n"
+	},
+	"Vuex store hotUpdate": {
+		"prefix": "storeHotUpdate",
+		"body": ["store.hotUpdate({", "\t${2}", "})"],
+		"description": "`hotUpdate(newOptions: Object)`.\nHot swap new actions and mutations.\n"
+	}
+}

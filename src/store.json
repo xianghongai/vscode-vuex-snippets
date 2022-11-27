@@ -1,0 +1,83 @@
+{
+	"Vuex Create a new Store (Vue2)": {
+		"prefix": "cs4vue2",
+		"body": [
+			"import Vue from 'vue';",
+			"import Vuex from 'vuex';",
+			"import resources from './modules/resources';",
+			"",
+			"Vue.use(Vuex);",
+			"$0",
+			"export default new Vuex.Store({",
+			"\tmodules: {",
+			"\t\tresources,",
+			"\t},",
+			"});"
+		],
+		"description": "Vuex Create a new store. (Vuex 3.x)\nConstructor Options.\n"
+	},
+	"Vuex Create a new Store": {
+		"prefix": "cs",
+		"body": [
+			"import { createStore, createLogger } from 'vuex';",
+			"import resources from './modules/resources';",
+			"",
+			"const debug = process.env.NODE_ENV !== 'production';",
+			"",
+			"export default createStore({",
+			"\tmodules: {",
+			"\t\tresources,",
+			"\t},",
+			"\tstrict: debug,",
+			"\tplugins: debug ? [createLogger()] : [],",
+			"});"
+		],
+		"description": "Vuex Create a new store. (Vuex 4.x)\nConstructor Options.\n"
+	},
+
+	"Vuex useStore": {
+		"prefix": "us",
+		"body": [
+			"import { useStore } from 'vuex';",
+			"${1:const store = useStore();}"
+		],
+		"description": "Fetches the injected store when called inside the `setup` hook.\n"
+	},
+
+	"Vuex Create a new Store (TS)": {
+		"prefix": "cs4ts",
+		"body": [
+			"import { InjectionKey } from 'vue';",
+			"import { createStore, useStore as baseUseStore, Store } from 'vuex';",
+			"",
+			"export interface State {",
+			"\tproperty: any;",
+			"}",
+			"",
+			"export const key: InjectionKey<Store<State>> = Symbol();",
+			"",
+			"export const store = createStore<State>({",
+			"\tstate: {",
+			"\t\tproperty: 'value',",
+			"\t},",
+			"});",
+			"",
+			"export function useStore() {",
+			"\treturn baseUseStore(key);",
+			"}",
+			"",
+			"${1:import { store, key \\} from './store';\napp.use(store, key);}",
+			""
+		],
+		"description": "Vuex Create a new store (TS)"
+	},
+
+	"Vuex useStore (TS)": {
+		"prefix": "us4ts",
+		"body": [
+			"import { useStore } from '${1:@/store}';",
+			"${2:const store = useStore();}"
+		],
+		"description": "Fetches the injected store when called inside the `setup` hook.\n"
+	}
+}
